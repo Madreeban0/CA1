@@ -18,7 +18,10 @@ app.post('/signup',(req,res) => {
     if(!/\S+@\S\,\S+/.test(email)){
         res.status(400).json({message:"Invalid Email"})
     }
+    if(userName && email && password && dob){
+        res.status(201).json({message: "User created"})
+    }
 });
 app.listen(3000, ()=> {
-    res.status(201).json({message: "User created"})
+   console.log("Server is running on http//:localhost:3000");
 });
