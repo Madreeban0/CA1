@@ -1,7 +1,7 @@
 const express= require('express');
 
 const app=express();
-app.post('signup',(req,res) => {
+app.post('/signup',(req,res) => {
     const{userName,email,password,dob}=req.body;
     if(!userName || !email || !password ||!dob){
         res.status(400).json({message:"All fields are required"});
