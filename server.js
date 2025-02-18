@@ -1,6 +1,6 @@
 const express= require('express');
-
 const app=express();
+app.use(express.json());
 app.post('/signup',(req,res) => {
     const{userName,email,password,dob}=req.body;
     if(!userName || !email || !password ||!dob){
